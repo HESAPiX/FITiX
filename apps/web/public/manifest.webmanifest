@@ -1,0 +1,11 @@
+{
+  "name": "FITiX",
+  "short_name": "FITiX",
+  "description": "Fitness, beslenme ve iyi yaşam takibi",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d0b",
+  "theme_color": "#090d0b",
+  "icons": []
+}
