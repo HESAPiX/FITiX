@@ -1,0 +1,16 @@
+{
+  "name": "fitix",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm --workspace @fitix/web run dev",
+    "dev:api": "npm --workspace @fitix/api run dev",
+    "build": "npm run build --workspace @fitix/web && npm run build --workspace @fitix/api",
+    "test": "npm run test --workspace @fitix/web && npm run test --workspace @fitix/api",
+    "typecheck": "npm run typecheck --workspace @fitix/web && npm run typecheck --workspace @fitix/api"
+  },
+  "devDependencies": { "concurrently": "^9.1.2", "typescript": "^5.7.3" },
+  "engines": { "node": ">=20.18.0" }
+}
