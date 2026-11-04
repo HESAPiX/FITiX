@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type FormEvent } from 'react';
 import { Activity, Apple, ArrowDownRight, ArrowUpRight, CalendarDays, ChevronRight, Droplets, Flame, Footprints, HeartPulse, Plus, Scale, Sparkles, Target, TrendingDown, Utensils, Waves } from 'lucide-react';
 
 type WeightEntry = { date: string; kg: number };
@@ -17,7 +17,7 @@ function App() {
   const progress = Math.max(0, Math.min(100, ((90 - latest) / (90 - 75)) * 100));
   const bmi = useMemo(() => (latest / (1.8 * 1.8)).toFixed(1), [latest]);
 
-  function addWeight(e: React.FormEvent) {
+  function addWeight(e: FormEvent) {
     e.preventDefault();
     const value = Number(weightInput.replace(',', '.'));
     if (!Number.isFinite(value) || value < 25 || value > 350) return;
